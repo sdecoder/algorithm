@@ -18,7 +18,7 @@ struct TreeNode {
 
 class Solution {
 public:
-  vector<vector<int>> result;
+  vector<vector<int> > result;
 
   void levelTra(TreeNode *root, int level) {
     if (root == NULL)
@@ -32,9 +32,9 @@ public:
     levelTra(root->right, level + 1);
   }
 
-  vector<vector<int>> levelOrderBottom(TreeNode *root) {
+  vector<vector<int> > levelOrderBottom(TreeNode *root) {
     levelTra(root, 0);
-    return vector<vector<int>>(result.rbegin(), result.rend());
+    return vector<vector<int> >(result.rbegin(), result.rend());
   }
 };
 
