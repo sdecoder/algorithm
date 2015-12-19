@@ -10,8 +10,10 @@ using namespace std;
 class Solution {
  public:
   vector<vector<int> > generateMatrix(int n) {
-    vector<vector<int> > matrix;
-    if (n <= 0) return matrix;
+    int matrix[n][n];
+    vector<vector<int> > result; 
+    if (n <= 0) return result;
+    
 
     int num = 1;
     int left = 0;
@@ -33,11 +35,23 @@ class Solution {
       right--;
     }
 
-    return matrix;
+    for (int i = 0; i < n; ++i)
+    {
+      std::vector<int> row;
+      for (int j = 0; j < n; ++j)
+      {
+        row.push_back(matrix[i][j]);
+      }
+      result.push_back(row);
+    }
+
+    return result;
   }
 };
 
 int main(int argc, char const *argv[]) {
   /* code */
+  Solution sol; 
+  sol.generateMatrix(10);
   return 0;
 }
