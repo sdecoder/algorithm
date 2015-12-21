@@ -28,7 +28,7 @@ class Solution {
   }
   int maxCoins(vector<int> &nums) {
     int n = nums.size();
-    nums.insert(nums.begin(), 1);
+    nums.insert(nums.begin(), 1);s
     nums.insert(nums.end(), 1);
     vector<vector<int> > dp(n + 2, vector<int>(n + 2, 0));
     return DP(1, n, nums, dp);
